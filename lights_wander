@@ -1,0 +1,83 @@
+#!/bin/bash
+echo 
+
+lights_bri_notrans 255
+lights_sat_notrans 255
+lights_hue_notrans 45000
+sleep 1
+
+CURRENT_LIGHT=1
+
+
+while true
+do
+
+
+
+	#25500 + rnd(40000) is more cyber
+    # col1=$[ 25500 + $[ RANDOM % 40000 ]]
+    # col2=$[ 25500 + $[ RANDOM % 40000 ]]
+    # col1=$[ 4000 + RANDOM % 16000 ]
+    # col2=$[ 4000 + RANDOM % 16000 ]
+
+    # lights_sat 0
+    # light_sat $CURRENT_LIGHT 255
+    lights_hue 45000
+    light_hue $CURRENT_LIGHT 9000
+
+    echo $CURRENT_LIGHT
+    sleep 1
+
+    # $RANDOM only goes till 32768!!!
+    # col1=$[ $RANDOM + $RANDOM ]
+    # col2=$[ $RANDOM + $RANDOM ]
+    # col3=$[ $RANDOM + $RANDOM ]
+    # col4=$[ $RANDOM + $RANDOM ]
+
+    # bri1=$[ 50 + RANDOM % 200 ]
+    # bri2=$[ 50 + RANDOM % 200 ]
+    # bri3=$[ 50 + RANDOM % 200 ]
+    # bri4=$[ RANDOM % 100 ]
+
+    # #echo "col1: $col1, col2: $col2, bri1: $bri1, bri2: $bri2"
+    # light_hue 1 $col1 
+    # light_hue 2 $col2    
+    # light_hue 3 $col3
+    # light_hue 4 $col4
+    # light_bri 1 $bri1
+    # light_bri 2 $bri2
+    # light_bri 3 $bri3
+    # light_bri 4 $bri4
+    # sleep 5
+
+    case "$CURRENT_LIGHT" in
+        1 )
+            CURRENT_LIGHT=4
+            ;;
+        2 )
+            CURRENT_LIGHT=3
+            ;;
+        3 )
+            CURRENT_LIGHT=1
+            ;;
+        4 )
+            CURRENT_LIGHT=2
+            ;;
+
+    esac
+
+
+    # CURRENT_LIGHT=$[ CURRENT_LIGHT + 1 ]
+    # if [[ CURRENT_LIGHT == 1 ]]; then
+    #     CURRENT_LIGHT=2
+    # fi
+    # elif [[ CURENT_LIGHT == 1 ]]; then
+    #     CURRENT_LIGHT=4        
+    # elif [[ CURENT_LIGHT == 4 ]]; then
+    #     CURRENT_LIGHT=2
+    # elif [[ CURENT_LIGHT == 2 ]]; then
+    #     CURRENT_LIGHT=3
+    # fi
+done
+
+

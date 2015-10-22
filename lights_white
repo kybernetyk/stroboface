@@ -1,0 +1,5 @@
+#!/bin/sh
+
+lights_hue_notrans 0
+lights_sat_notrans 0
+lights_bri_notrans 255

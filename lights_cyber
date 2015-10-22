@@ -1,0 +1,9 @@
+#!/bin/sh
+
+light_hue_notrans 3 46920
+light_hue_notrans 1 24000
+light_hue_notrans 2 0
+light_hue_notrans 4 49920
+lights_bri_notrans 50
+lights_sat_notrans 255
+light_bri_notrans 4 100

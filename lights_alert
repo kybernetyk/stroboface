@@ -1,0 +1,44 @@
+#!/bin/bash
+echo 
+
+lights_bri_notrans 1
+lights_sat_notrans 255
+lights_hue_notrans 12750
+# lights_hue_notrans 46920
+# lights_hue_notrans 65280
+sleep 1
+
+while true
+do
+    light_bri_notrans 1 254
+    light_bri_notrans 2 254
+    light_bri_notrans 3 254
+    light_bri_notrans 4 254
+    sleep 0.1
+    light_bri_notrans 1 1
+    light_bri_notrans 2 1
+    light_bri_notrans 3 1
+    light_bri_notrans 4 1
+    sleep 0.1
+    light_bri_notrans 1 254
+    light_bri_notrans 2 254
+    light_bri_notrans 3 254
+    light_bri_notrans 4 254
+    sleep 0.1
+    light_bri_notrans 1 1
+    light_bri_notrans 2 1
+    light_bri_notrans 3 1
+    light_bri_notrans 4 1
+    sleep 1
+    light_bri_notrans 1 1
+    light_bri_notrans 2 1
+    light_bri_notrans 3 1
+    light_bri_notrans 4 1
+#    light_bri_notrans 1 254
+#    light_bri_notrans 2 254
+#    light_bri_notrans 1 1
+#    light_bri_notrans 2 1
+    sleep 1
+done
+
+

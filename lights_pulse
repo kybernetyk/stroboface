@@ -1,0 +1,15 @@
+#!/bin/bash
+echo 
+
+lights_bri_notrans 1
+sleep 1
+
+while true
+do
+    lights_bri 254
+    sleep 5
+    lights_bri 1
+    sleep 5
+done
+
+
