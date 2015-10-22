@@ -2,7 +2,7 @@
 These scripts allow you to control your Philips Hue lights from the command line.
 
 ##How To
-1. Edit 'lights.conf' and set up your bridge IP and secret/username (consult HUE API docs on how to do this)
+1. Edit 'lights.conf' and set up your bridge IP and secret/username (consult [HUE API docs](http://www.developers.meethue.com/documentation/getting-started) on how to do this)
 2. run the scripts
 
 ##Dependencies
