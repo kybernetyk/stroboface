@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source lights.conf
+LIGHTNUM=$1
+
+URL=http://$HUEIP/api/$SECRET/lights/$1/state
+PAYLOAD='{"bri": '$2', "transitiontime": 20}'
+
+curl -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null

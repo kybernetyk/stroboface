@@ -1,0 +1,25 @@
+#!/bin/bash
+echo 
+
+
+CURRENT_LIGHT=1
+MAX_LIGHTS=4
+
+LO_BRI=0
+HI_BRI=255
+
+lights_bri_notrans $LO_BRI
+sleep 1
+
+while true
+do
+	CURRENT_LIGHT=$[ RANDOM % MAX_LIGHTS + 1 ]
+	echo "YOU HAVE BEEN CHOSEN: $CURRENT_LIGHT"
+	light_bri_superfast $CURRENT_LIGHT $HI_BRI
+	sleep 1
+	light_bri_fast $CURRENT_LIGHT $LO_BRI
+	sleep 2
+
+done
+
+
