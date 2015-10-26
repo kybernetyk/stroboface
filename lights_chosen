@@ -6,7 +6,7 @@ CURRENT_LIGHT=1
 MAX_LIGHTS=4
 
 LO_BRI=0
-HI_BRI=255
+HI_BRI=120
 
 lights_bri_notrans $LO_BRI
 sleep 1
