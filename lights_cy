@@ -5,4 +5,4 @@ lights hue 27597
 lights_xy_notrans 0.2098 0.6737
 lights_sat_notrans 254
 light_hue_notrans 4 47000
-lights_bri_notrans 23
+lights_bri_notrans 0
