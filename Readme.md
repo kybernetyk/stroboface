@@ -5,6 +5,9 @@ These scripts allow you to control your Philips Hue lights from the command line
 1. Edit 'lights.conf' and set up your bridge IP and secret/username (consult [HUE API docs](http://www.developers.meethue.com/documentation/getting-started) on how to do this)
 2. run the scripts
 
+##How do I find my bridge IP?
+Go to the bridgefinder directory, execute build.sh and run bridgefinder binary. Depends on clang and libdispatch (OS X with devtools installed essentially).
+
 ##Dependencies
 1. Curl
 
