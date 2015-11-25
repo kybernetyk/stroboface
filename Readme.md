@@ -14,6 +14,7 @@ Go to the bridgefinder directory, execute build.sh and run bridgefinder binary. 
 ##Notes
 1. The scripts assume you have 4 lights connected to your bridge. If you have less or more lights you will have to hack the scripts.
 2. Some scripts (like looping, etc) assume the other scripts are in your $PATH ... so add this to your $PATH because do it
+3. Yes, my secret key is in the lights.conf but fuck you I'm too lazy to change it every time I commit. Come and haxx0r my lights ...
 
 ##License
 Affero GPL 3 (because fuck you)
