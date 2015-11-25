@@ -1,0 +1,6 @@
+#!/bin/sh
+
+lights on
+lights_hue 13000
+lights_sat 255
+lights_bri 255
