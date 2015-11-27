@@ -6,7 +6,7 @@ These scripts allow you to control your Philips Hue lights from the command line
 2. run the scripts
 
 ##How do I find my bridge IP?
-Go to the bridgefinder directory, execute build.sh and run bridgefinder binary. Depends on clang and libdispatch (OS X with devtools installed essentially).
+Go to the bridgefinder directory, execute build.sh and run bridgefinder binary. Depends on clang and libdispatch (OS X with devtools installed essentially). Builds and runs on linux (use build-rpi.sh) but the Raspberry Pi seems to be too shit to receive udp multicast messages. My other Debian box works without problems. Meh ... I guess you get what you pay for, eh?
 
 ##Dependencies
 1. Curl
