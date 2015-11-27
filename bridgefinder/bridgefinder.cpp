@@ -129,7 +129,7 @@ void listen_for_bridges() {
     setsockopt(udpSocket, IPPROTO_IP, IP_MULTICAST_LOOP, (char *)&loopch, sizeof(loopch));
     
     // Set local interface for outbound multicast datagrams. The IP address specified must be associated with a local, multicast capable interface.
-    localInterface.s_addr = inet_addr("192.168.0.1");
+    localInterface.s_addr = inet_addr("10.0.0.19");
     
     setsockopt(udpSocket, IPPROTO_IP, IP_MULTICAST_IF, (char *)&localInterface, sizeof(localInterface));
     
@@ -143,7 +143,7 @@ void listen_for_bridges() {
     
     // Join the multicast group on the local interface. Note that this IP_ADD_MEMBERSHIP option must be called for each local interface over which the multicast datagrams are to be received.
     group.imr_multiaddr.s_addr = inet_addr("239.255.255.250");
-    group.imr_interface.s_addr = inet_addr("192.168.0.1");
+    group.imr_interface.s_addr = inet_addr("10.0.0.1");
     
     setsockopt(udpSocket, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char *)&group, sizeof(group));
     
@@ -155,7 +155,8 @@ void listen_for_bridges() {
         printf("failed to send M-SEARCH request.\n");
         exit(127);
     }
-    
+   
+	printf("waiting for bridges ...\n"); 
     
     struct sockaddr_in si_other;
     socklen_t slen = sizeof(si_other);
@@ -179,7 +180,7 @@ void listen_for_bridges() {
                         ptr++;
                     }
                     
-                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                         dump_bridge_info(bridge_desc_url);
                     });
                 }
@@ -192,7 +193,7 @@ void listen_for_bridges() {
 
 int main(int argc, const char * argv[]) {
     // Structs needed
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         listen_for_bridges();
     });
     dispatch_main();
