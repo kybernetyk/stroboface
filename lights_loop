@@ -30,10 +30,11 @@ do
     light_hue 2 $col2    
     light_hue 3 $col3
     light_hue 4 $col4
-    light_bri 1 $bri1
-    light_bri 2 $bri2
-    light_bri 3 $bri3
-    light_bri 4 $bri4
+    light_hue 5 $col3
+#    light_bri 1 $bri1
+#    light_bri 2 $bri2
+#    light_bri 3 $bri3
+#    light_bri 4 $bri4
     sleep 5
 done
 

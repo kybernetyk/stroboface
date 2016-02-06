@@ -1,29 +1,4 @@
 #!/bin/bash
 
-if [ $1 = "on" ]; then
-    lights_on
-fi
+lights_$1 $2 $3 $4
 
-if [ $1 = "off" ]; then
-    lights_off
-fi
-
-if [ $1 = "bri" ]; then
-    lights_bri $2
-fi
-
-if [ $1 = "cy" ]; then
-    lights_cy
-fi
-
-if [ $1 = "hue" ]; then
-    lights_hue_notrans $2
-fi
-
-if [ $1 = "xy" ]; then
-    lights_xy_notrans $2 $3
-fi
-
-if [ $1 = "sat" ]; then
-    lights_sat_notrans $2
-fi
