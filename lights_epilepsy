@@ -12,18 +12,26 @@ do
     col1=$[ 25500 + $[ RANDOM % 40000 ]]
     col2=$[ 25500 + $[ RANDOM % 40000 ]]
     col3=$[ 25500 + $[ RANDOM % 40000 ]]
+    col4=$[ 25500 + $[ RANDOM % 40000 ]]
+    col5=$[ 25500 + $[ RANDOM % 40000 ]]
     # col1=$[ RANDOM % 65534 ]
     # col2=$[ RANDOM % 65534 ]
     bri1=$[ RANDOM % 200 ]
     bri2=$[ RANDOM % 200 ]
     bri3=$[ RANDOM % 200 ]
+    bri4=$[ RANDOM % 200 ]
+    bri5=$[ RANDOM % 200 ]
     # echo "col1: $col1, col2: $col2, bri1: $bri1, bri2: $bri2"
     light_hue_notrans 1 $col1 
     light_hue_notrans 2 $col2
     light_hue_notrans 3 $col3
+    light_hue_notrans 4 $col4
+    light_hue_notrans 5 $col5
     light_bri_notrans 1 $bri1
     light_bri_notrans 2 $bri2
     light_bri_notrans 3 $bri3
+    light_bri_notrans 4 $bri5
+    light_bri_notrans 5 $bri5
 done
 
 

@@ -19,18 +19,19 @@ do
     col2=$[ $RANDOM + $RANDOM ]
     col3=$[ $RANDOM + $RANDOM ]
     col4=$[ $RANDOM + $RANDOM ]
+    col5=$[ $RANDOM + $RANDOM ]
 
     bri1=$[ 50 + RANDOM % 200 ]
     bri2=$[ 50 + RANDOM % 200 ]
     bri3=$[ 50 + RANDOM % 200 ]
     bri4=$[ RANDOM % 100 ]
-
+    bri5=$[ 50 + RANDOM % 200 ]
     #echo "col1: $col1, col2: $col2, bri1: $bri1, bri2: $bri2"
     light_hue 1 $col1 
     light_hue 2 $col2    
     light_hue 3 $col3
     light_hue 4 $col4
-    light_hue 5 $col3
+    light_hue 5 $col5
 #    light_bri 1 $bri1
 #    light_bri 2 $bri2
 #    light_bri 3 $bri3
