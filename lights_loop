@@ -1,10 +1,13 @@
 #!/bin/bash
 echo 
+source lights.conf
 
 lights_bri_notrans 1
 lights_sat_notrans 255
 lights_hue_notrans 46920
 sleep 1
+
+SLEEPTIME=$(($TRANSTIME / 10))
 
 while true
 do
@@ -27,8 +30,8 @@ do
     bri4=$[ RANDOM % 100 ]
     bri5=$[ 50 + RANDOM % 200 ]
     #echo "col1: $col1, col2: $col2, bri1: $bri1, bri2: $bri2"
-    light_hue 1 $col1 
-    light_hue 2 $col2    
+    light_hue 1 $col1
+    light_hue 2 $col2
     light_hue 3 $col3
     light_hue 4 $col4
     light_hue 5 $col5
@@ -36,7 +39,5 @@ do
 #    light_bri 2 $bri2
 #    light_bri 3 $bri3
 #    light_bri 4 $bri4
-    sleep 5
+    sleep $SLEEPTIME
 done
-
-

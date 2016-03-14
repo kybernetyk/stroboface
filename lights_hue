@@ -3,6 +3,6 @@
 source lights.conf
 
 URL=http://$HUEIP/api/$SECRET/groups/0/action
-PAYLOAD='{"hue": '$1', "transitiontime": 50}'
+PAYLOAD='{"hue": '$1', "transitiontime": '$TRANSTIME'}'
 
 curl -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null

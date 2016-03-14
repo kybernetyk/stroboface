@@ -1,5 +1,7 @@
 #!/bin/bash
-echo 
+source lights.conf
+
+SLEEPTIME=$(($TRANSTIME / 10))
 
 lights_bri_notrans 1
 sleep 1
@@ -7,9 +9,7 @@ sleep 1
 while true
 do
     lights_bri 254
-    sleep 5
+    sleep $SLEEPTIME
     lights_bri 1
-    sleep 5
+    sleep $SLEEPTIME
 done
-
-
