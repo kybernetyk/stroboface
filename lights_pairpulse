@@ -1,0 +1,39 @@
+#!/bin/bash
+echo 
+
+
+CURRENT_LIGHT=1
+MAX_LIGHTS=4
+
+LO_BRI=0
+HI_BRI=120
+
+lights_bri_notrans $LO_BRI
+sleep 1
+
+light_bri_notrans 1 $LO_BRI
+light_bri_notrans 2 $LO_BRI
+light_bri_notrans 4 $LO_BRI
+light_bri_notrans 5 $LO_BRI
+sleep 1
+
+
+
+while true
+do
+	light_bri 4 $HI_BRI
+	light_bri 5 $HI_BRI
+	light_bri 1 $LO_BRI
+	light_bri 2 $LO_BRI
+	sleep 5
+
+	light_bri 1 $HI_BRI
+	light_bri 2 $HI_BRI
+	light_bri 4 $LO_BRI
+	light_bri 5 $LO_BRI
+	
+	sleep 5
+
+done
+
+

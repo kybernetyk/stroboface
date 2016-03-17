@@ -1,0 +1,7 @@
+#!/bin/bash
+
+lights_bri_notrans 0
+light_hue_notrans 4 0
+light_hue_notrans 1 48000
+light_hue_notrans 2 0
+light_hue_notrans 5 48000
