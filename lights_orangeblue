@@ -6,7 +6,7 @@ light_bri 3 0
 lights_sat 255
 light_hue 1 9000
 light_hue 2 51000
-light_hue 3 51000
+light_hue 3 9000 
 light_hue 4 48000
 light_hue 5 6000
 
