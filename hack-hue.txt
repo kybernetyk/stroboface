@@ -1,0 +1,7 @@
+1. start proxy sniff:
+    bettercap --proxy --proxy-module example.rb -T $HUE-IP,$CLIENT-IP
+    //example.rb = the example http proxy module from the docs, just prints out request contents
+
+2. look for the PUT URL GET URL following the PUT. open it in browser
+
+3. look through dump for "whitelist" json data. the keys to that dict are the secret keys for the Hue

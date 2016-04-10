@@ -2,6 +2,7 @@
 source lights.conf
 
 SLEEPTIME=$(($TRANSTIME / 10))
+SLEEPTIMELONG=$(($SLEEPTIME * 3))
 
 lights_bri_notrans 1
 sleep 1
@@ -11,5 +12,5 @@ do
     lights_bri 254
     sleep $SLEEPTIME
     lights_bri 1
-    sleep $SLEEPTIME
+    sleep $SLEEPTIMELONG
 done
