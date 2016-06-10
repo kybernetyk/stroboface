@@ -6,4 +6,4 @@ LIGHTNUM=$1
 URL=http://$HUEIP/api/$SECRET/lights/$1/state
 PAYLOAD='{"hue": '$2', "transitiontime": 0}'
 
-curl -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null
+curl -s -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null

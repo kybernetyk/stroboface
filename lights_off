@@ -4,4 +4,4 @@ source lights.conf
 
 URL=http://$HUEIP/api/$SECRET/groups/0/action
 
-curl -H "Accept: application/json" -X PUT --data '{"on": false, "transitiontime": 0}' $URL > /dev/null
+curl -s -H "Accept: application/json" -X PUT --data '{"on": false, "transitiontime": 0}' $URL > /dev/null

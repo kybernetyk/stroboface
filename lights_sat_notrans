@@ -6,4 +6,4 @@ source lights.conf
 
 URL=http://$HUEIP/api/$SECRET/groups/0/action
 PAYLOAD='{"sat": '$1', "transitiontime": 0}'
-curl -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null
+curl -s -H "Accept: application/json" -X PUT --data "$PAYLOAD" $URL > /dev/null
