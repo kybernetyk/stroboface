@@ -1,0 +1,5 @@
+#!/bin/sh
+
+light_hue 5 0
+
+light_bri 5 $1

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+light_hue 1 24000
+light_hue 2 24000
+light_hue 3 24000
+
+light_bri 1 $1
+light_bri 2 $1
+light_bri 3 $1

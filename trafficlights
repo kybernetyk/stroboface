@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# This scripts monitors your network traffic and adjusts lamp brightness to match bandwidth usage. 100% = full brightness.
+
+# change the hardcoded values for your net connection (iface, max up and max down stream)
+
+
+_delta_t=1
+_interface=en0
+netstat -i -I ${_interface} -b -w ${_delta_t} |
+    awk 'BEGIN {
+        printf ("\tin\tout\n")
+    }{
+        if ($0 !~ /(input|packets)/) {
+            inb=$3 ; oub=$6 ;
+
+						inbri=$3/1800000*255 ;
+						oubri=$6/150000*255 ;
+
+            printf("%8d%8d\n", inbri, oubri)
+
+						system("lights_rx " int(inbri))
+						system("lights_tx " int(oubri))
+        }
+    }'
+
+
