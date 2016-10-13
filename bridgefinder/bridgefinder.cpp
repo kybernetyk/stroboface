@@ -156,7 +156,7 @@ void listen_for_bridges() {
         exit(127);
     }
    
-	printf("waiting for bridges ...\n"); 
+	printf("waiting for bridges ... (abort with ctrl+c)\n"); 
     
     struct sockaddr_in si_other;
     socklen_t slen = sizeof(si_other);

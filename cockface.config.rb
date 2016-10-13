@@ -1,6 +1,7 @@
 #
 # default configs
-# 
+#
+# Philips is the reason why we can't have nice things.
 #
 
 class Config
