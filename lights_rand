@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import sys
+import random
+import os
+import time
+
+lightcount = 5
+
+def randlight(lightnum):
+	hue = 25500 + random.randint(0, 40000)
+	#bri = random.randint(0, 255)
+	os.system("light_hue_notrans " + str(lightnum) + " " + str(hue))
+	#os.system("light_bri_notrans " + str(lightnum) + " " + str(bri))
+
+def lightflicker(iterations):
+	for j in range(0, iterations):
+		for i in xrange(1, lightcount):
+			randlight(i)
+		time.sleep(0.1)
+
+if len(sys.argv) != 2:
+	print "usage: xxxx <iterationcount>"
+	sys.exit(1)
+
+itercount = int(sys.argv[1])
+lightflicker(itercount)

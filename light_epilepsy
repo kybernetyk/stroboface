@@ -1,0 +1,17 @@
+#!/bin/bash
+echo 
+
+light_bri 3 255
+light_sat 3 255
+light_hue 3 46920
+sleep 1
+
+while true
+do
+    col1=$[ 25500 + $[ RANDOM % 40000 ]]
+    bri1=$[ RANDOM % 200 ]
+    light_hue_notrans $1 $col1 
+    light_bri_notrans $1 $bri1
+done
+
+
