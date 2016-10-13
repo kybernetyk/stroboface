@@ -12,15 +12,24 @@ light_on 2
 light_on 3
 light_on 5
 
+#1 second
 _delta_t=1
+
+#network interface
 _interface=en0
+
+
 netstat -i -I ${_interface} -b -w ${_delta_t} |
     awk 'BEGIN {
     }{
         if ($0 !~ /(input|packets)/) {
             inb=$3 ; oub=$6 ;
 
+						#1800000 is my max down stream. adjust the value so that at 100% 
+						#network usage you get a valua of 255
             inbri=$3/1800000*255 ;
+
+						#this is the upstream...
             oubri=$6/150000*255 ;
 
             printf("[%i, %i] ", inbri, oubri)
