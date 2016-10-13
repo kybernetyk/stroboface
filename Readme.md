@@ -1,11 +1,11 @@
-###Kyb's Hue Scripts
-These scripts allow you to control your Philips Hue lights from the command line.
+###Stroboface - Command Line Hue Scripts
+These scripts allow you to control your Philips Hue lights from the command line without the need for the over engineered Philips SDK.
 
-##New Ruby Version
-I'm porting the scripts to Ruby right now. The most important stuff has been ported already. (Shell scripting sucks).
+##New: Ruby Version
+I'm porting the scripts to Ruby right now. The most important stuff has been ported already. (Just learned Ruby 5 hours ago - so please excuse the bad code).
 
 ##How To
-1. Edit 'lights.conf' and set up your bridge IP and secret/username (consult [HUE API docs](http://www.developers.meethue.com/documentation/getting-started) on how to do this)
+1. Edit 'stroboface.conf.rb' (or lights.conf for the shell version) and set up your bridge IP and secret/username (consult [HUE API docs](http://www.developers.meethue.com/documentation/getting-started) on how to do this)
 2. run the scripts
 
 ##How do I find my bridge IP?
