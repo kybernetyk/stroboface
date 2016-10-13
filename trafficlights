@@ -1,4 +1,8 @@
 #!/bin/sh
+# this is a script which will dim/brighten your lights depending
+# on your network bandwidth usage. the more you down/upload the 
+# brighter your lights.
+# interface and max bandwidth hardcoded, lol
 lights_on
 lights_sat 255
 lights_bri 0
