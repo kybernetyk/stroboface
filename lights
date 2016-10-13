@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'optparse'
-require_relative 'cockface.rb'
+require_relative 'stroboface.rb'
 
 options = {
 	:light_id => 0
@@ -41,11 +41,9 @@ if ARGV[0].downcase == "scan"
 end
 
 #ok, let's get started...
-hue = Cockface.new(options[:light_id])
+hue = Stroboface.new(options[:light_id])
 is_complex_command = (ARGV.count >= 2)
 
-#lol, is_complex_command ... sounds almost like some deep learning AI sperglord talking
-#billionaires out of their money...
 if is_complex_command
 	cmd = ARGV[0].downcase
 	message = "#{cmd}="
