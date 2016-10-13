@@ -25,11 +25,11 @@ netstat -i -I ${_interface} -b -w ${_delta_t} |
         if ($0 !~ /(input|packets)/) {
             inb=$3 ; oub=$6 ;
 
-						#1800000 is my max down stream. adjust the value so that at 100% 
-						#network usage you get a valua of 255
+            #1800000 is my max down stream. adjust the value so that at 100% 
+            #network usage you get a valua of 255
             inbri=$3/1800000*255 ;
 
-						#this is the upstream...
+            #this is the upstream...
             oubri=$6/150000*255 ;
 
             printf("[%i, %i] ", inbri, oubri)
