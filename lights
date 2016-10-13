@@ -61,3 +61,5 @@ else
 	hue.send(cmd)
 end
 
+#TODO: when send() fails try to forward to lights_#{cmd} shell scripts
+
