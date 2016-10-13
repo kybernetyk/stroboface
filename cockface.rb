@@ -1,6 +1,16 @@
+#
+# cockface.rb - access your philips hue without the AIDS that's their official SDK
+# 
+# the name is dedicated to the philips hue development team. thanks for blocking strobo, fuckers.
+#
+# Licensed under Affero GPL 3 because I hate people and want you to suffer. 
+#
+# Don't contact me. Don't send me patches. Kthxbye.
+#
+
 require 'net/http'
 require 'json'
-require_relative 'config.rb'
+require_relative 'cockface.config.rb'
 
 class Hue
 
@@ -40,13 +50,8 @@ class Hue
 
 	def send_request(payload, trans_time)
 		payload['transitiontime'] = trans_time 
-
 		jpl = payload.to_json
-		if Config.verbosity_level > 0
-			print "sending: "
-			puts jpl
-		end
-
+		
 		endpoints = OpenStruct.new
 		endpoints.light = "/api/#{Config.api_key}/lights/#{@light_id}/state"
 		endpoints.group = "/api/#{Config.api_key}/groups/#{@light_id}/action"
@@ -56,7 +61,15 @@ class Hue
 		else
 			endp = endpoints.light
 		end
-		
+	
+		if Config.verbosity_level > 0
+			print "url: "
+			puts endp
+			print "payload: "
+			puts jpl
+		end
+
+	
 		http = Net::HTTP.new(Config.ip, Config.port)
 		resp = http.send_request('PUT', endp, jpl)
 		

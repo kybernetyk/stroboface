@@ -10,7 +10,7 @@ class Config
 	@light_count = 5
 	@api_key = "2c94da63e6702cf1c368f5b30235a47"
 	@trans_time = 15
-	@verbosity_level = 3
+	@verbosity_level = 0
 
 	#don't change below this line
 	class << self

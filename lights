@@ -1,4 +1,50 @@
-#!/bin/bash
+#!/usr/bin/env ruby
+require 'optparse'
+require_relative 'hue.rb'
 
-lights_$1 $2 $3 $4
+options = {
+	:light_id => 0
+}
+
+opt_parser = OptionParser.new do |opts|
+	opts.version = "23.5 illuniatus advanced tournament edition alpha"
+	opts.banner = "Usage: #{opts.program_name()} [options] <command> [command_value]"
+	opts.separator ""
+  
+	opts.separator "Commands:"
+	opts.separator "    on                               Let there be light."
+	opts.separator "    off                              Lights out."
+	opts.separator "    hue <0-6500                      Adjust Hue."
+	opts.separator "    bri <0-255>                      Adjust Brightness."
+
+	opts.separator ""
+	opts.separator "Options:"
+	opts.on('-l', '--light ID', "Send commands to specific light.") { |v| options[:light_id] = v.to_i }
+	opts.on('-t', '--trans TIME', "Transition duration. Hint: It's not seconds!") { |v| Config.trans_time = v.to_i }
+	opts.on('-v', '--verbose', "Verbosity level. Default 0. Which is silent.") { |v| Config.verbosity_level = 3 }
+end
+opt_parser.parse!
+
+if ARGV.count == 0
+	puts opt_parser
+	exit
+end
+
+hue = Hue.new(options[:light_id])
+is_complex_command = (ARGV.count >= 2)
+
+if is_complex_command
+	cmd = ARGV[0].downcase
+	message = "#{cmd}="
+	value = ARGV[1].to_i
+	
+	hue.send(message, value)
+else
+	cmd = ARGV[0].downcase
+	if cmd == "on" or cmd == "off"
+		cmd = "turn_#{cmd}"
+	end
+	
+	hue.send(cmd)
+end
 
