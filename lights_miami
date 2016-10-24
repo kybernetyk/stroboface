@@ -1,0 +1,35 @@
+#!/bin/sh
+#  script generated
+#    on 2016-10-24 14:21:33 +0000
+#    by kyb
+
+#Light id 1 - Philips - LLC011 - LivingColors 1
+light_on 1
+light_hue 1 36422
+light_sat 1 254
+light_bri 1 1
+
+#Light id 2 - Philips - LLC011 - LivingColors 2
+light_on 2
+light_hue 2 14629
+light_sat 2 254
+light_bri 2 1
+
+#Light id 3 - Philips - LLC010 - Hue iris 1
+light_off 3
+light_hue 3 27602
+light_sat 3 254
+light_bri 3 1
+
+#Light id 4 - Philips - LCT001 - Hue color lamp 1
+light_on 4
+light_hue 4 28506
+light_sat 4 254
+light_bri 4 1
+
+#Light id 5 - Philips - LST001 - Hue lightstrip 1
+light_on 5
+light_hue 5 65535
+light_sat 5 254
+light_bri 5 1
+

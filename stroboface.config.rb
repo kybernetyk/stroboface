@@ -6,7 +6,7 @@
 
 class Config
 	#change this to your liking
-	@ip = "10.0.0.4"
+	@ip = "192.168.0.52"
 	@port = 80
 	@light_count = 5
 	@api_key = "2c94da63e6702cf1c368f5b30235a47"
