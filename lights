@@ -48,7 +48,8 @@ if is_complex_command
 	cmd = ARGV[0].downcase
 	message = "#{cmd}="
 	value = ARGV[1].to_i
-	
+
+	#tries to call hue.message(value) ... like objc_send()	
 	hue.send(message, value)
 else
 	cmd = ARGV[0].downcase
