@@ -1,0 +1,42 @@
+#!/bin/bash
+echo 
+source lights.conf
+
+lights_bri_notrans 1
+sleep 1
+
+SLEEPTIME=$(($TRANSTIME / 10))
+
+while true
+do
+	#25500 + rnd(40000) is more cyber
+    # col1=$[ 25500 + $[ RANDOM % 40000 ]]
+    # col2=$[ 25500 + $[ RANDOM % 40000 ]]
+    # col1=$[ 4000 + RANDOM % 16000 ]
+    # col2=$[ 4000 + RANDOM % 16000 ]
+
+    # $RANDOM only goes till 32768!!!
+    col1=$[ $RANDOM + $RANDOM ]
+    col2=$[ $RANDOM + $RANDOM ]
+    col3=$[ $RANDOM + $RANDOM ]
+    col4=$[ $RANDOM + $RANDOM ]
+    col5=$[ $RANDOM + $RANDOM ]
+
+    bri1=$[ RANDOM % 200 ]
+    bri2=$[ RANDOM % 200 ]
+    bri3=$[ RANDOM % 200 ]
+    bri4=$[ RANDOM % 100 ]
+    bri5=$[ RANDOM % 200 ]
+    #echo "col1: $col1, col2: $col2, bri1: $bri1, bri2: $bri2"
+#    light_hue 1 $col1
+#    light_hue 2 $col2
+#    light_hue 3 $col3
+#    light_hue 4 $col4
+#    light_hue 5 $col5
+    light_bri 1 $bri1
+    light_bri 2 $bri2
+    light_bri 3 $bri3
+    light_bri 4 $bri4
+		light_bri 5 $bri5
+    sleep $SLEEPTIME
+done
