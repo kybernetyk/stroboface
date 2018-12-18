@@ -1,6 +1,6 @@
 #!/bin/sh
 #  script generated
-#    on 2018-09-04 9:09:27 AM +0000
+#    on 2018-10-14 10:46:42 +0000
 #    by kyb
 
 #Light id 1 - Philips - LLC011 - LivingColors 1
@@ -32,4 +32,10 @@ light_on 5
 light_hue 5 36000
 light_sat 5 254
 light_bri 5 254
+
+#Light id 6 - Philips - LST002 - strippi
+light_on 6
+light_hue 6 8418
+light_sat 6 254
+light_bri 6 254
 
