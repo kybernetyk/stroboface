@@ -5,11 +5,12 @@ import random
 import os
 import time
 
-lightcount = 5
+lightcount = 7
 
 def randlight(lightnum):
 	hue = 25500 + random.randint(0, 40000)
 	#bri = random.randint(0, 255)
+        print lightnum
 	os.system("light_hue_notrans " + str(lightnum) + " " + str(hue))
 	#os.system("light_bri_notrans " + str(lightnum) + " " + str(bri))
 

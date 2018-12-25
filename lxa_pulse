@@ -11,6 +11,6 @@ while true
 do
     lights_bri 254
     sleep $SLEEPTIME
-    lights_bri 1
+    lights_bri 154 
     sleep $SLEEPTIMELONG
 done
